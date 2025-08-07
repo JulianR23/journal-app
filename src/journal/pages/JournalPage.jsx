@@ -10,14 +10,17 @@ export const JournalPage = () => {
 
   const dispatch = useDispatch();
   const { isSaving, active } = useSelector(state => state.journal);
-  console.log(active)
   const onCLicknewNote = () => {
     dispatch(startNewNote());
   }
 
   return (
     <JournalLayout>
-      {!!active ? <h1>NoteView</h1> : <h1>NothingSelectedView</h1>}
+      {
+        (!!active) 
+          ? <NoteView /> 
+          : <NothingSelectedView />
+      }
 
       
       {/* <NoteView /> */}
