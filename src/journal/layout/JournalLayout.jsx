@@ -1,4 +1,4 @@
-import { Box, Toolbar } from '@mui/material';
+import { Toolbar, Box } from '@mui/material';
 import { NavBar, SideBar } from '../components';
 
 

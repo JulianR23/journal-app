@@ -16,11 +16,11 @@ export const useCheckAuth = () => {
     useEffect(() => {
         
         onAuthStateChanged( FirebaseAuth, async( user ) => {
-        if ( !user ) return dispatch( logout() );
+            if ( !user ) return dispatch( logout() );
 
-        const { uid, email, displayName, photoURL } = user;
-        dispatch( login({ uid, email, displayName, photoURL }) );
-        dispatch(startLoadingNotes);
+            const { uid, email, displayName, photoURL } = user;
+            dispatch( login({ uid, email, displayName, photoURL }) );
+            dispatch(startLoadingNotes());
         })
     }, []);
 
